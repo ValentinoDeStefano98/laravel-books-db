@@ -16,13 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'BookController@index');
 
 //rotta: localhost8080/book/id
-Route::get('/book/{id}', function ($id) {
-
-    $books = config('books'); //recupera tutto l'array book
-
-    //recuperare un solo dato dell'array globale
-    $book = $books[$id];
-
-    //compact('books') = [ 'books' => $books]
-    return view('pages.book.show', compact('book'));
-})->name('book');
+Route::get('/book/{id}', 'BookController@show')->name('book');

@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$book->title}}</h5>
                             <p class="card-text">{{$book->description}}</p>
-                            <a href="{{route('book', ['id' => $key])}}" class="card-link">Vai alle info</a>
+                            <a href="{{route('book', ['id' => $key+1])}}" class="card-link">Vai alle info</a>
                         </div>
                     </div> 
                 </div>
