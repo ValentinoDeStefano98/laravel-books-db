@@ -13,13 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //rotta: localhost: 8080
-Route::get('/', function () {
-
-    $books = config('books');
-
-    //compact('books') = [ 'books' => $books]
-    return view('pages.book.index', compact('books'));
-});
+Route::get('/', 'BookController@index');
 
 //rotta: localhost8080/book/id
 Route::get('/book/{id}', function ($id) {
