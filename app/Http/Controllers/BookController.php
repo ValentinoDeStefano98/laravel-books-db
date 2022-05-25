@@ -12,10 +12,14 @@ class BookController extends Controller
         //$books = config('books');
         //dump($books);
 
-        $books = Book::all();
+        //SELECT * FROM 'books'
+        //$books = Book::all();
 
-        //dd($books);
+        //SELECT title FROM 'books'
+        $books = Book::select('title')->get();
 
+        //SELECT * FROM books WHERE title != 'il signore degli anelli';
+        $books = Book::where('title', '!=', 'Il signore degli anelli')->get();
         return view('pages.book.index', compact('books'));
     }
 }
